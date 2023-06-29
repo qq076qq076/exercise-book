@@ -1,0 +1,124 @@
+/* :host {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #833434, #064667);
+} */
+
+.canva {}
+
+.floor {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+
+  100% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+}
+
+
+.floor::before {
+  content: '';
+  position: absolute;
+  top: 26vh;
+  left: 0;
+  width: 80vh;
+  height: 80vh;
+  background: linear-gradient(45deg, #833434, #064667);
+  transform: rotateX(90deg);
+}
+
+.skyscrapper {
+  position: absolute;
+  width: 100px;
+  height: 300px;
+  transform-style: preserve-3d;
+}
+
+.skyscrapper .top {
+  position: absolute;
+  top: 34vh;
+  left: 13vh;
+  width: 100px;
+  height: 100px;
+  background: var(--clr);
+  transform: rotateX(90deg) translateZ(50px);
+  box-shadow: inset 0 100px rgba(0, 0, 0, 0.36), inset 0 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.skyscrapper div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.skyscrapper div span {
+  position: absolute;
+  top: 34vh;
+  left: 13vh;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.skyscrapper div span:nth-child(1) {
+  transform: translate3d(0, 0, 50px);
+  background: linear-gradient(to bottom, transparent 50%, var(--clr) 50%),
+    linear-gradient(to right, #999 50%, var(--clr) 50%);
+  background-size: 10px 10px;
+}
+
+.skyscrapper div span:nth-child(2) {
+  transform: rotateY(90deg) translate3d(0, 0, 50px);
+  background: linear-gradient(to bottom, transparent 50%, var(--clr) 50%),
+    linear-gradient(to right, #999 50%, var(--clr) 50%);
+  background-size: 10px 10px;
+}
+
+.skyscrapper div span:nth-child(3) {
+  transform: rotateY(180deg) translate3d(0, 0, 50px);
+  background: linear-gradient(to bottom, transparent 50%, var(--clr) 50%),
+    linear-gradient(to right, #999 50%, var(--clr) 50%);
+  background-size: 10px 10px;
+}
+
+.skyscrapper div span:nth-child(4) {
+  transform: rotateY(270deg) translate3d(0, 0, 50px);
+  background: linear-gradient(to bottom, transparent 50%, var(--clr) 50%),
+    linear-gradient(to right, #999 50%, var(--clr) 50%);
+  background-size: 10px 10px;
+}
+
+.skyscrapper .bottom {
+  position: absolute;
+  left: 10vh;
+  top: 57vh;
+  width: 150px;
+  height: 150px;
+  background: var(--clr);
+  transform: rotateX(90deg);
+  border: 4px solid var(--clr);
+}
+
+.skyscrapper.two {
+  position: absolute;
+  left: 25vh;
+  top: -7vh;
+  transform: scale(1.15);
+}
+
+.skyscrapper.three {
+  position: absolute;
+  top: 15vh;
+  transform: translateZ(210px) scaleY(0.7);
+}
