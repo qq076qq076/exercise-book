@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routes } from './app-routing.module';
-import { Route } from '@angular/router';
+import { ActivationEnd, Route, Router } from '@angular/router';
+import { filter, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,13 @@ export class AppComponent implements OnInit {
   title = 'exercise-book';
   routerList: RouteCus[] = [];
 
+  currentRoute = this.router.events.pipe(
+    filter((event): event is ActivationEnd => event instanceof ActivationEnd),
+    map((activationEnd: ActivationEnd) => (activationEnd.snapshot as unknown as RouteCus).data.title)
+  )
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
     routes.forEach((routes) => {
