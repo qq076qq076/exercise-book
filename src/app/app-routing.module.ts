@@ -1,3 +1,4 @@
+import { RepeatingLinearGradientComponent } from './pages/repeating-linear-gradient/repeating-linear-gradient.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
@@ -24,6 +25,13 @@ export const routes: Routes = [
     component: AnimationComponent,
     data: {
       title: 'Animation'
+    }
+  },
+  {
+    path: 'repeating-linear-gradient',
+    component: RepeatingLinearGradientComponent,
+    data: {
+      title: 'Repeating Linear Gradient'
     }
   },
   {

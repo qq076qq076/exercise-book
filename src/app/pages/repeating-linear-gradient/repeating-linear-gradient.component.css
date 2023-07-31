@@ -1,0 +1,43 @@
+.loader{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg,var(--clr) 0%,var(--clr) 5%,transparent 5%,transparent 40%,var(--clr) 100%);
+}
+
+@property --ang{
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.loader2{
+  --ang: 0deg;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from var(--ang),var(--clr) 0%,var(--clr) 5%,transparent 5%,transparent 40%,var(--clr) 100%);
+}
+
+.loader2::before{
+  content: '';
+  position: absolute;
+  inset: 7px;
+  background: white;
+  border-radius: 50%;
+}
+
+.loader3{
+  animation: loader linear infinite 1s;
+}
+
+@keyframes loader {
+  0%{
+    --ang: 0deg;
+  }
+  100%{
+    --ang: 360deg;
+  }
+}

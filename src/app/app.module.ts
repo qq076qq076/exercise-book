@@ -7,6 +7,7 @@ import { CodePlaceComponent } from './components/code-place/code-place.component
 import { IndexComponent } from './pages/index/index.component';
 import { CityDddComponent } from './pages/city-ddd/city-ddd.component';
 import { AnimationComponent } from './pages/animation/animation.component';
+import { RepeatingLinearGradientComponent } from './pages/repeating-linear-gradient/repeating-linear-gradient.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AnimationComponent } from './pages/animation/animation.component';
     CodePlaceComponent,
     IndexComponent,
     CityDddComponent,
-    AnimationComponent
+    AnimationComponent,
+    RepeatingLinearGradientComponent
   ],
   imports: [
     BrowserModule,

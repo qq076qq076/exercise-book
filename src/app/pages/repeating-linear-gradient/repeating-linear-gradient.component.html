@@ -1,0 +1,57 @@
+<section>
+
+  <div>
+    <div class="d-flex flex-wrap mb-3">
+      <div class="loader mb-3" style="--clr:red;"></div>
+      <pre class=" mb-3">
+  .loader &lcub;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    <span class="bg-yellow-950">background: repeating-conic-gradient(from 0deg,var(--clr) 0%,var(--clr) 5%,transparent 5%,transparent 40%,var(--clr) 100%);</span>
+  &rcub;
+      </pre>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap mb-3">
+    <div class="loader2 mb-3" style="--clr:red;"></div>
+    <pre class=" mb-3">
+  .loader::before&lcub;
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background: white;
+    border-radius: 50%;
+  &rcub;
+    </pre>
+  </div>
+  <div class="d-flex flex-wrap mb-3">
+    <div class="loader2 loader3 mb-3" style="--clr:red;"></div>
+    <pre class=" mb-3">
+  @property --ang&lcub;
+    syntax: '	&lt;angle	&gt;';
+    inherits: false;
+    initial-value: 0deg;
+  &rcub;
+  .loader&lcub;
+    ...
+    background: repeating-conic-gradient(<span class="bg-yellow-950">from var(--ang)</span>,var(--clr) 0%,var(--clr) 5%,transparent 5%,transparent 40%,var(--clr) 100%);
+    animation: loader infinite 1s;
+  &rcub;
+  @keyframes loader &lcub;
+    0%&lcub;
+      --ang: 0deg;
+    &rcub;
+    100%&lcub;
+      --ang: 360deg;
+    &rcub;
+  &rcub;
+    </pre>
+  </div>
+  <div>
+    <a class="text-cyan-500 underline underline-offset-3"
+      href="https://www.youtube.com/watch?v=hjGvCbHNwko"
+      target="_blank">參考來源</a>
+  </div>
+</section>
