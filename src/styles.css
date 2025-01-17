@@ -1,8 +1,8 @@
+/* @import 'normalize.css'; */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import 'normalize.css'; */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 /* You can add global styles to this file, and also import other style files */
 
 
