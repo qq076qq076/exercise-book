@@ -1,0 +1,24 @@
+.field-sizing {
+  field-sizing: content;
+}
+
+.interpolate-size {
+  interpolate-size: allow-keywords;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  width: 150px;
+  height: 80px;
+}
+
+.interpolate-size:hover {
+  width: 200px;
+  height: 150px;
+}
+
+.anchor-position-item {
+  anchor-name: --over-easy;
+}
+
+.anchor-position-area {
+  position: absolute;
+  position-anchor: --over-easy;
+}

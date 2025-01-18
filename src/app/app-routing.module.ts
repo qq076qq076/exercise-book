@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { CityDddComponent } from './pages/city-ddd/city-ddd.component';
 import { AnimationComponent } from './pages/animation/animation.component';
+import { Feature2024Component } from './pages/feature-2024/feature-2024.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,13 @@ export const routes: Routes = [
     component: RepeatingLinearGradientComponent,
     data: {
       title: 'Repeating Linear Gradient'
+    }
+  },
+  {
+    path: 'feature-2024',
+    component: Feature2024Component,
+    data: {
+      title: 'New CSS Features 2024'
     }
   },
   {

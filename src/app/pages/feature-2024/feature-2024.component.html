@@ -1,0 +1,117 @@
+<section>
+
+  <div>
+    <h2 class="text-xl mb-3">field-sizing : 寬度根據內容自動調整</h2>
+    <div class="flex flex-wrap mb-3">
+      <div>
+        <div class="mb-3 flex">
+          <h4 class="w-40">original</h4>
+          <input type="text"
+                 class="min-w-[200px] border rounded border-black"
+                 placeholder="type more...." />
+        </div>
+        <div class="mb-3 flex">
+          <h4 class="w-40">use field-sizing</h4>
+          <input type="text"
+                 class="field-sizing min-w-[200px] border rounded border-black"
+                 placeholder="type more...." />
+        </div>
+      </div>
+      <pre class="mb-3">
+  .field-sizing &lcub;
+    field-sizing: content;
+  &rcub;
+      </pre>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-xl mb-3">interpolate-size : 動畫過度、自動調整寬高</h2>
+    <div class="flex flex-wrap mb-3">
+      <div class="interpolate-size w-20 h-20 hover:w-40 hover:h-40 border rounded border-black bg-gray-200 p-2 mb-3">
+        Hover to see the size change
+      </div>
+      <pre class="mb-3">
+  .interpolate-size &lcub;
+    interpolate-size: allow-keywords;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    width: 150px;
+    height: 80px;
+  &rcub;
+
+  .interpolate-size:hover &lcub;
+    width: 200px;
+    height: 150px;
+  &rcub;
+      </pre>
+    </div>
+  </div>
+  <div>
+    <h2 class="text-xl mb-3">Exclusive &lt;details&gt; 手風琴元件</h2>
+    <div class="mb-3">
+      <details name="learn-css"
+               open>
+        <summary>Title 1</summary>
+        <p>Content 1</p>
+      </details>
+
+      <details name="learn-css">
+        <summary>Title 2</summary>
+        <p>Content 2</p>
+      </details>
+    </div>
+    <pre class="mb-3">
+  &lt;details name="learn-css" open&gt;
+    &lt;summary&gt;Title 1&lt;/summary&gt;
+    &lt;p&gt;Content 1&lt;/p&gt;
+  &lt;/details&gt;
+  &lt;details name="learn-css" open&gt;
+    &lt;summary&gt;Title 1&lt;/summary&gt;
+    &lt;p&gt;Content 1&lt;/p&gt;
+  &lt;/details&gt;
+    </pre>
+  </div>
+  <div class="mb-3">
+    <h2 class="text-xl mb-3">Anchor Positioning 錨點定位</h2>
+    <div class="mb-3">
+      <div class="w-100 h-[300px] bg-gray-200 relative flex justify-center items-center">
+        <div class="anchor-position-item w-10 h-10 bg-red-500 rounded-full">item</div>
+        <div class="anchor-position-area w-16 h-14 bg-blue-500"
+             [ngStyle]="{'position-area': position}">area</div>
+      </div>
+    </div>
+    <div>
+      position-area: {{ position }}
+    </div>
+    <div>
+      @for(pos of positionArea; track pos) {
+      <div class="w-full flex flex-wrap gap-2 mb-2">
+        @for(p of pos; track p) {
+        <button class="border rounded border-black p-2"
+                (click)="position = p">{{ p }}</button>
+        }
+      </div>
+      }
+    </div>
+    <pre class="mb-3">
+  &lt;div class="anchor-position-item"&gt;item&lt;/div&gt;
+  &lt;div class="anchor-position-area"&gt;area&lt;/div&gt;
+    </pre>
+    <pre class="mb-3">
+  .anchor-position-item &lcub;
+    anchor-name: --over-easy;
+  &rcub;
+
+  .anchor-position-area &lcub;
+    position: absolute;
+    position-anchor: --over-easy;
+    position-area: {{ position }};
+  &rcub;
+    </pre>
+  </div>
+  <div>
+    <a class="text-cyan-500 underline underline-offset-3"
+       href="https://tools.wingzero.tw/article/sn/3140"
+       target="_blank">參考來源</a>
+  </div>
+</section>
